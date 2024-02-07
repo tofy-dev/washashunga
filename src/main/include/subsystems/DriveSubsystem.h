@@ -13,7 +13,6 @@
 #include <units/velocity.h>
 #include <units/time.h>
 #include <units/acceleration.h>
-#include <frc/motorcontrol/Spark.h>
 #include <frc/drive/DifferentialDrive.h>
 #include <frc/motorcontrol/MotorControllerGroup.h>
 #include <frc/filter/SlewRateLimiter.h>
@@ -67,13 +66,11 @@ class DriveSubsystem : public frc2::SubsystemBase {
     const int lmotor_pwm_channel_2 = 8;
     const int rmotor_pwm_channel_1 = 0;
     const int rmotor_pwm_channel_2 = 1;
-    const int conv_pwm_channel = 2;
 
     frc::PWMSparkMax m_leftMotor1{lmotor_pwm_channel_1};
     frc::PWMSparkMax m_rightMotor1{rmotor_pwm_channel_1};
     frc::PWMSparkMax m_leftMotor2{lmotor_pwm_channel_2};
     frc::PWMSparkMax m_rightMotor2{rmotor_pwm_channel_2};
-    frc::PWMSparkMax m_conveyorMotor{conv_pwm_channel};
     frc::SlewRateLimiter<units::dimensionless::scalar> filter{2/1_s};
 
     frc::Encoder m_leftEncoder{1, 2};

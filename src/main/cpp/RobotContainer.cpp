@@ -8,6 +8,7 @@
 #include <frc2/command/sysid/SysIdRoutine.h>
 
 #include "commands/JoystickDriveCmd.h"
+#include "commands/RunConveyorCmd.h"
 #include "Constants.h"
 
 using namespace Controller;
@@ -23,6 +24,13 @@ RobotContainer::RobotContainer() {
     },
     [&]() -> bool {
       return driveController.GetRawButton(1);
+    }
+  });
+
+  m_conveyor.SetDefaultCommand(RunConveyorCmd{
+    &m_conveyor,
+    [&]() -> double {
+      return opController.GetRawAxis(rTrigger) - opController.GetRawAxis(lTrigger);
     }
   });
   

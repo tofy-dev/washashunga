@@ -9,6 +9,7 @@
 
 #include "Constants.h"
 #include "subsystems/DriveSubsystem.h"
+#include "subsystems/ConveyorSubsystem.h"
 #include <frc2/command/button/CommandJoystick.h>
 
 /**
@@ -31,6 +32,7 @@ class RobotContainer {
 
   // The robot's subsystems are defined here...
   DriveSubsystem m_drive;
+  ConveyorSubsystem m_conveyor;
 
   void ConfigureBindings();
 };
