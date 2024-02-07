@@ -15,14 +15,12 @@
  */
 
 namespace Controller {
-    constexpr int lX_Joystick = 0;
-    constexpr int lY_Joystick = 1;
+constexpr int lX_Joystick = 0;
+constexpr int lY_Joystick = 1;
 
-    constexpr int lTrigger = 2;
-    constexpr int rTrigger = 3;
+constexpr int lTrigger = 2;
+constexpr int rTrigger = 3;
 
-    constexpr int rX_Joystick = 4;
-    constexpr int rY_Joystick = 5;
-}
-
-
+constexpr int rX_Joystick = 4;
+constexpr int rY_Joystick = 5;
+} // namespace Controller

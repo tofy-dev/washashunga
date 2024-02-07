@@ -4,12 +4,12 @@
 
 #pragma once
 
-#include <frc2/command/CommandPtr.h>
 #include <frc/Joystick.h>
+#include <frc2/command/CommandPtr.h>
 
 #include "Constants.h"
-#include "subsystems/DriveSubsystem.h"
 #include "subsystems/ConveyorSubsystem.h"
+#include "subsystems/DriveSubsystem.h"
 #include <frc2/command/button/CommandJoystick.h>
 
 /**
@@ -20,12 +20,12 @@
  * commands, and trigger mappings) should be declared here.
  */
 class RobotContainer {
- public:
+public:
   RobotContainer();
 
   frc2::CommandPtr GetAutonomousCommand();
 
- private:
+private:
   // Replace with CommandPS4Controller or CommandJoystick if needed
   frc2::CommandJoystick driveController{1};
   frc2::CommandJoystick opController{2};

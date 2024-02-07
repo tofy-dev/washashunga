@@ -4,9 +4,9 @@
 
 #pragma once
 
+#include <frc2/command/Command.h>
 #include <frc2/command/CommandBase.h>
 #include <frc2/command/CommandHelper.h>
-#include <frc2/command/Command.h>
 
 #include "subsystems/ConveyorSubsystem.h"
 
@@ -17,15 +17,15 @@
  * directly; this is crucially important, or else the decorator functions in
  * Command will *not* work!
  */
-class RunConveyorCmd : public frc2::CommandHelper<frc2::Command, RunConveyorCmd> {
- public:
-
-  RunConveyorCmd(ConveyorSubsystem* subsystem, 
-    std::function<double()> speedFcn);
+class RunConveyorCmd
+    : public frc2::CommandHelper<frc2::Command, RunConveyorCmd> {
+public:
+  RunConveyorCmd(ConveyorSubsystem *subsystem,
+                 std::function<double()> speedFcn);
 
   void Execute();
 
- private:
-  ConveyorSubsystem* m_subsystem;
+private:
+  ConveyorSubsystem *m_subsystem;
   std::function<double()> speedFcn;
 };

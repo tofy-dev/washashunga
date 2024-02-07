@@ -4,9 +4,9 @@
 
 #pragma once
 
+#include <frc2/command/Command.h>
 #include <frc2/command/CommandBase.h>
 #include <frc2/command/CommandHelper.h>
-#include <frc2/command/Command.h>
 
 #include "subsystems/DriveSubsystem.h"
 
@@ -17,18 +17,17 @@
  * directly; this is crucially important, or else the decorator functions in
  * Command will *not* work!
  */
-class JoystickDriveCmd : public frc2::CommandHelper<frc2::Command, JoystickDriveCmd> {
- public:
-
-  JoystickDriveCmd(DriveSubsystem* subsystem, 
-    std::function<double()> xSpeedFcn, 
-    std::function<double()> ySpeedFcn,
-    std::function<bool()> turnInPlaceFcn);
+class JoystickDriveCmd
+    : public frc2::CommandHelper<frc2::Command, JoystickDriveCmd> {
+public:
+  JoystickDriveCmd(DriveSubsystem *subsystem, std::function<double()> xSpeedFcn,
+                   std::function<double()> ySpeedFcn,
+                   std::function<bool()> turnInPlaceFcn);
 
   void Execute();
 
- private:
-  DriveSubsystem* m_subsystem;
+private:
+  DriveSubsystem *m_subsystem;
 
   std::function<double()> xSpeedFcn, ySpeedFcn;
   std::function<bool()> turnInPlaceFcn;
