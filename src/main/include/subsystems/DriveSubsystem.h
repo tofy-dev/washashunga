@@ -88,8 +88,6 @@ private:
           [this](units::volt_t driveVoltage) {
             m_leftMotor1.SetVoltage(driveVoltage);
             m_rightMotor1.SetVoltage(driveVoltage);
-            m_leftMotor2.SetVoltage(driveVoltage);
-            m_rightMotor2.SetVoltage(driveVoltage);
           },
           [this](frc::sysid::SysIdRoutineLog *log) {
             log->Motor("drive-left-1")
